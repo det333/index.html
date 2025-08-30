@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Panduan Wisata Banggai Laut</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- A-Frame Library -->
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- Foto 360 -->
+      <a-sky src="images/pantai-banggai.jpg" rotation="0 -90 0"></a-sky>
+
+      <!-- Kamera & Cursor -->
+      <a-entity camera look-controls>
+        <a-cursor color="#FF0000" fuse="true" fuse-timeout="1000"></a-cursor>
+      </a-entity>
+
+      <!-- Teks Info Wisata -->
+      <a-entity
+        geometry="primitive: plane; width: 2; height: 1"
+        material="color: #000; opacity: 0.7"
+        position="0 1.5 -3"
+        text="value: Selamat Datang di Wisata Banggai Laut!; color: #FFF; align: center; wrapCount: 25;">
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

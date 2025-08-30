@@ -1,0 +1,36 @@
+name: Deploy VR 360 Dewi Balut to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # branch utama tempat kamu push kode
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # 2. Setup Node.js (opsional, jika pakai npm atau build tool)
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    # 3. Install dependencies (opsional)
+    - name: Install dependencies
+      run: |
+        if [ -f package.json ]; then
+          npm install
+        fi
+
+    # 4. Deploy ke branch gh-pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./  # root folder proyek
+        publish_branch: gh-pages
