@@ -1,4 +1,4 @@
-name: Deploy VR 360 Dewi Balut to GitHub Pages
+name: 360 Dewi Balut to GitHub Pages
 
 on:
   push:
